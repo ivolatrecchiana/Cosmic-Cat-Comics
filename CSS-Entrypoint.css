@@ -1,0 +1,121 @@
+.atras-tarjeta {
+    background: #000000 url('gato-ciudad.jpg') no-repeat center center/cover;
+    color: #ffffff;
+    transform: rotateY(180deg);
+}
+
+.atras-tarjeta h1, .atras-tarjeta h2, .atras-tarjeta h3 {
+    color: #ffffff !important;
+    text-shadow: 0 0 12px #ff41f6, 0 0 20px #ff41f6 !important;
+}
+
+.atras-tarjeta p, .atras-tarjeta span {
+    color: #ffffff !important;
+}
+
+.atras-tarjeta * {
+    position: relative;
+    z-index: 2;
+}
+
+.atras-tarjeta::before {
+    background: rgba(0, 0, 0, 0.75);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.cara {
+    -webkit-backface-visibility: hidden !important;
+    align-items: center;
+    backface-visibility: hidden !important;
+    border: 2px solid #ff4181;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 25px rgba(255, 65, 129, 0.3);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    overflow-y: auto;
+    padding: 20px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+}
+
+.contenedor-tarjeta-flip {
+    height: 90vh;
+    margin: 2vh auto;
+    max-width: 1200px;
+    perspective: 1500px;
+    width: 90vw;
+}
+
+.contenedor-tarjeta-flip:hover .tarjeta-3d {
+    transform: rotateY(180deg);
+}
+
+.frente-tarjeta {
+    background: #000 url('gato-ciudad.jpg') no-repeat center center/cover;
+    color: #ffffff;
+    transform: rotateY(0deg);
+}
+
+.frente-tarjeta div, .frente-tarjeta h2, .frente-tarjeta p {
+    position: relative;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.9), 0 0 20px #ff4181;
+    z-index: 2;
+}
+
+.frente-tarjeta::before {
+    background: rgba(0, 0, 0, 0.35);
+    content: '';
+    left: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.tarjeta-3d {
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .contenedor-tarjeta-flip {
+        height: 85vh;
+        width: 95vw;
+    }
+    
+    .cara {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}

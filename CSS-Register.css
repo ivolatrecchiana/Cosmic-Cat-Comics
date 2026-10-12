@@ -1,0 +1,163 @@
+body.modo-claro .tarjeta-comic {
+    background: #ffffff !important;
+    color: #1d1d1f !important;
+    border-color: #a855f7 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+body.modo-claro .tarjeta-comic label {
+    color: #333333 !important;
+}
+
+body.modo-claro input[type="text"] {
+    background-color: #f1f3f5 !important;
+    border: 1.5px solid #cccccc !important;
+    color: #1d1d1f !important;
+}
+
+.boton-registro {
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    box-shadow: 0px 4px 12px rgba(236, 72, 153, 0.4);
+    color: #ffffff;
+}
+
+.boton-registro:active {
+    transform: translateY(0);
+}
+
+.boton-registro:hover {
+    box-shadow: 0px 6px 16px rgba(236, 72, 153, 0.6);
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+.contenedor-registro {
+    align-items: center;
+    background-image: radial-gradient(rgba(255, 65, 251, 0.18) 15%, transparent 16%), radial-gradient(rgba(0, 210, 255, 0.18) 15%, transparent 16%);
+    background-size: 28px 28px;
+    background-position: 0 0, 14px 14px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    justify-content: space-around;
+    padding: 20px 50px;
+    width: 100%;
+}
+
+.logo-comic {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    z-index: 2;
+    flex-direction: row;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.logo-comic h1 {
+    color: #ff41fb;
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin: 0;
+    text-shadow: 4px 4px 0px #a314a0, 0 0 15px rgba(255, 65, 251, 0.5);
+    text-transform: uppercase;
+}
+
+.tarjeta-comic {
+    background: #121212;
+    border: 3px solid #000000;
+    border-radius: 16px;
+    box-shadow: 8px 8px 0px #a855f7, 8px 8px 15px #ff4181;
+    flex-shrink: 0;
+    max-width: 320px;
+    outline: 3px solid #ff41fb;
+    padding: 16px 22px;
+    position: relative;
+    text-align: center;
+    transform: rotate(-1deg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.tarjeta-comic button {
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    padding: 8px 12px;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+}
+
+.tarjeta-comic h1 {
+    font-size: 1.8rem;
+    margin-bottom: 2px;
+}
+
+.tarjeta-comic h2 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.tarjeta-comic input:focus {
+    border-color: #a855f7;
+    box-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
+}
+
+.tarjeta-comic input[type="email"], .tarjeta-comic input[type="text"] {
+    background-color: #21232d;
+    border: 1.5px solid #3b3e4a;
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-size: 0.85rem;
+    outline: none;
+    padding: 6px 10px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+.tarjeta-comic label {
+    color: #e2e8f0;
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 6px;
+    margin-bottom: 2px;
+    text-align: left;
+}
+
+.tarjeta-comic:hover {
+    box-shadow: 10px 10px 0px #a855f7, 10px 10px 20px #ff4181;
+    transform: rotate(0deg) scale(1.01);
+}
+
+@media (max-width: 768px) {
+    .contenedor-registro {
+        padding: 20px 15px;
+    }
+
+    .logo-comic {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .logo-comic h1 {
+        font-size: 2.5rem;
+    }
+
+    .tarjeta-comic {
+        max-width: 100%;
+        transform: none;
+    }
+
+    .tarjeta-comic:hover {
+        transform: none;
+    }
+}
