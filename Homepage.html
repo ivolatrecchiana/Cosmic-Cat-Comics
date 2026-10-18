@@ -6,7 +6,7 @@
         <title>COSMIC 🐱 - Homepage</title>
         <link rel="stylesheet" href="CSS-All.css">
         <link rel="stylesheet" href="CSS-Homepage.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cloudflare.com">
     </head>
     <body style="overflow-y: auto;">     
         <header class="encabezado-sitio">
@@ -37,12 +37,24 @@
             <section id="populares" class="carrusel-populares">
                 <button type="button" class="flecha" onclick="moverCarrusel(-1)">❮</button>
                 
-                <div class="contenedor-portada">
-                    <a id="enlace-pdf" href="Comic1 - Ghost Rider by Donny Cates (2023) (digital-SD) (Dakota Scanning).pdf" target="_blank" rel="noopener noreferrer">
-                        <img id="portada-img" src="gato-ciudad.jpg" alt="Popular">
+                <div class="contenedor-portada" style="height: auto; aspect-ratio: 2/3;">
+                    <a id="enlace-pdf-0" href="Comic1 - Ghost Rider by Donny Cates (2023) (digital-SD) (Dakota Scanning).pdf" target="_blank" rel="noopener noreferrer">
+                        <img id="portada-img-0" src="Portada Comic 1 - Ghost Rider by Donny Cates (2023).png" alt="Popular 1">
                     </a>
                 </div>
-                
+
+                <div class="contenedor-portada" style="height: auto; aspect-ratio: 2/3;">
+                    <a id="enlace-pdf-1" href="Comic2 - The Amazing Spider-an-comic-series.pdf" target="_blank" rel="noopener noreferrer">
+                        <img id="portada-img-1" src="Portada Comic 2 - The Amazing Spider-man-comic-series.png" alt="Popular 2">
+                    </a>
+                </div>
+
+                <div class="contenedor-portada" style="height: auto; aspect-ratio: 2/3;">
+                    <a id="enlace-pdf-2" href="Comic3 - Superman - The Man of Steel v01 (2020) (digital) (Son of Ultron-Empire).pdf" target="_blank" rel="noopener noreferrer">
+                        <img id="portada-img-2" src="Portada Comic 3 -  Superman - The Man of Steel (2020) (Son of Ultron-Empire).png" alt="Popular 3">
+                    </a>
+                </div>
+
                 <button type="button" class="flecha" onclick="moverCarrusel(1)">❯</button>
             </section>
 
@@ -100,34 +112,48 @@
                         }
                     }
                 }
-            };
+            }
 
             const datosCarrusel = [
                 {
-                    imagen: "gato-ciudad.jpg",
+                    imagen: "Portada Comic 1 - Ghost Rider by Donny Cates (2023).png",
                     pdf: "Comic1 - Ghost Rider by Donny Cates (2023) (digital-SD) (Dakota Scanning).pdf"
                 },
                 {
-                    imagen: "logo.jpeg",
-                    pdf: "aqui-coloca-el-nombre-de-tu-segundo-archivo.pdf" // <- Cambia esto por tu segundo PDF real
+                    imagen: "Portada Comic 2 - The Amazing Spider-man-comic-series.png",
+                    pdf: "Comic2 - The Amazing Spider-an-comic-series.pdf"
+                },
+                {
+                    imagen: "Portada Comic 3 -  Superman - The Man of Steel (2020) (Son of Ultron-Empire).png",
+                    pdf: "Comic3 - Superman - The Man of Steel v01 (2020) (digital) (Son of Ultron-Empire).pdf"
                 }
-            ]; 
+            ]
 
             let actual = 0;
 
             function moverCarrusel(dir) {
                 actual = (actual + dir + datosCarrusel.length) % datosCarrusel.length;
-                
-                const imgElemento = document.getElementById("portada-img");
-                const enlaceElemento = document.getElementById("enlace-pdf");
-                
-                imgElemento.src = datosCarrusel[actual].imagen;
-                enlaceElemento.href = datosCarrusel[actual].pdf;
+                actualizarCarrusel();
+            }
+
+            function actualizarCarrusel() {
+                for (let i = 0; i < 3; i++) {
+                    let indiceData = (actual + i) % datosCarrusel.length;
+                    
+                    const imgElemento = document.getElementById("portada-img-" + i);
+                    const enlaceElemento = document.getElementById("enlace-pdf-" + i);
+                    
+                    if (imgElemento && enlaceElemento) {
+                        imgElemento.src = datosCarrusel[indiceData].imagen;
+                        enlaceElemento.href = datosCarrusel[indiceData].pdf;
+                    }
+                }
             }
                     
             function cambiarTema() {
                 document.body.classList.toggle("modo-claro");
                 var boton = document.getElementById("btn-tema");
+
                 if (document.body.classList.contains("modo-claro")) {
                     boton.textContent = "🌙 Modo Oscuro";
                 } else {
