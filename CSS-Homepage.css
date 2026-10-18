@@ -127,6 +127,7 @@ body {
     transform: scale(1.2);
 }
 
+
 .seccion-comics {
     max-width: 1200px;
     margin: 0 auto;
@@ -248,4 +249,12 @@ body.modo-claro main h3 {
 
 body.modo-claro main p[style*="color"] {
     color: #6e6e73 !important;
+}
+
+.contenedor-portada a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
 }
