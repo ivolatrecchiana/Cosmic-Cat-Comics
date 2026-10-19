@@ -30,6 +30,10 @@ body {
     padding: 8px 12px;
     text-decoration: none;
     transition: color 0.3s, text-shadow 0.3s;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    gap: 8px;
 }
 
 .boton-desplegable:hover, 
@@ -37,6 +41,18 @@ body {
 #btn-tema:hover {
     color: #00d2ff;
     text-shadow: 0 0 8px #00d2ff;
+}
+
+.enlace-nav img.img-instagram {
+    width: auto;
+    height: 1rem;
+    display: inline-block;
+    transition: filter 0.3s, opacity 0.3s;
+}
+
+.enlace-nav:hover img.img-instagram {
+    filter: drop-shadow(0 0 4px #00d2ff) brightness(1.2);
+    opacity: 0.9;
 }
 
 .header-mobile {
@@ -126,7 +142,6 @@ body {
 .carrusel-populares .flecha:hover {
     transform: scale(1.2);
 }
-
 
 .seccion-comics {
     max-width: 1200px;
